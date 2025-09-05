@@ -55,6 +55,12 @@ button:hover {
   height: 200px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.05);
 }
 
 .message {
@@ -68,6 +74,36 @@ button:hover {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
 #confetti {
   position: fixed;
   top: 0;
@@ -76,3 +112,4 @@ button:hover {
   height: 100%;
   pointer-events: none;
 }
+
