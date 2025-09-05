@@ -1,3 +1,4 @@
+// 🎊 Confetti Effect
 const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -40,3 +41,19 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+// 📸 Lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll(".photo-grid img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    // Open bigger version (if available)
+    lightboxImg.src = img.src.replace("200", "600");
+  });
+});
+
+function closeLightbox() {
+  lightbox.style.display = "none";
+}
